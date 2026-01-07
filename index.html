@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basu Tandon | Data-Driven Materials Engineer</title>
+    <style>
+        /* --- CSS will go here (See Section 2 in previous response) --- */
+
+        /* --- Global Styles --- */
+        :root {
+            --primary-color: #004d99; /* Deeper Blue */
+            --secondary-color: #00b4d8; /* Brighter Blue */
+            --text-color: #333;
+            --background-color: #F4F7F9;
+            --card-background: #FFFFFF;
+            --impact-color: #EE6C4D; /* Orange for key impact */
+            --transition-speed: 0.5s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth; /* Smooth scrolling for navigation */
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3, h4 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        /* --- Scroll Progress Bar --- */
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            z-index: 11;
+            height: 4px;
+            background: var(--impact-color);
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+
+        /* --- Navigation Bar --- */
+        #navbar {
+            background: var(--primary-color);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        #navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        #navbar .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        #navbar ul {
+            list-style: none;
+            display: flex;
+        }
+
+        #navbar ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            transition: background var(--transition-speed);
+            border-radius: 5px;
+        }
+
+        #navbar ul li a:hover {
+            background: var(--secondary-color);
+        }
+
+        .button-link {
+            background: var(--impact-color);
+            border-radius: 5px;
+            margin-left: 15px;
+            font-weight: bold;
+        }
+        .button-link:hover {
+            background: #d4593b !important;
+            transform: translateY(-2px);
+        }
+
+
+        /* --- Hero Section --- */
+        #hero {
+            /* *** ACTION ITEM: REPLACE THIS URL *** */
+            /* Suggestion: Use an image showing an industrial control room, data visualization, or a subtle microstructure/kiln shot */
+            background: linear-gradient(rgba(0, 77, 153, 0.8), rgba(0, 77, 153, 0.8)), url('https://images.unsplash.com/photo-1549419149-a2e6f15777ce?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax effect */
+            color: white;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        #hero h1 {
+            font-size: 4rem;
+            margin-bottom: 5px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        #hero h2 {
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            font-weight: 400;
+            color: var(--secondary-color);
+        }
+
+        .impact-statement {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 6px solid var(--impact-color);
+            transition: all var(--transition-speed);
+        }
+
+        .impact-statement:hover {
+            transform: scale(1.02);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .impact-statement i {
+            font-size: 1.8rem;
+            margin-right: 20px;
+            color: var(--impact-color);
+        }
+
+        .impact-statement p {
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 1.1rem;
+            transition: color 0.3s, transform 0.3s;
+            display: inline-block;
+        }
+
+        .social-links a:hover {
+            color: var(--impact-color);
+            transform: translateY(-3px);
+        }
+        .social-links i {
+            margin-right: 5px;
+        }
+
+
+        /* --- Section Styles --- */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            border-bottom: 4px solid var(--impact-color);
+            display: inline-block;
+            padding-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+        .section-header i {
+            margin-right: 10px;
+        }
+
+
+        /* --- Experience & Projects Cards (The Animation) --- */
+        .job-card, .project-card, .card {
+            background: var(--card-background);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid var(--primary-color);
+            transition: all var(--transition-speed) ease-out;
+
+            /* Initial state for animation */
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .animated-card.in-view, .skill-group.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .job-card:hover, .project-card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            border-left-width: 10px;
+            transform: translateY(-5px);
+        }
+
+        .job-card h3 {
+            font-size: 1.5rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        .job-card .duration {
+            color: #666;
+            margin-bottom: 15px;
+            display: block;
+            font-style: italic;
+        }
+
+        .job-card ul {
+            list-style-type: '👉 '; /* Custom bullet point */
+            padding-left: 20px;
+        }
+
+        .job-card li {
+            margin-bottom: 10px;
+        }
+
+        .project-card h4 {
+            color: var(--impact-color);
+            font-size: 1.4rem;
+        }
+
+        .project-card .tech-stack {
+            color: var(--primary-color);
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            padding: 5px 10px;
+            background: #eef;
+            display: inline-block;
+            border-radius: 4px;
+        }
+
+
+        /* --- Skills Grid --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-group {
+            background: var(--card-background);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            text-align: left;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .skill-group:hover {
+            background: #fffafa;
+            transform: scale(1.03);
+        }
+
+        .skill-group h4 {
+            color: var(--impact-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .skill-group ul {
+            list-style: none;
+        }
+        .skill-group li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 1.05rem;
+        }
+        .skill-group li:last-child {
+            border-bottom: none;
+        }
+
+        /* --- Academic Grid & Table --- */
+/* --- Academic Grid & Table --- */
+/* --- Academic Grid & Table --- */
+.academic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card h4 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    overflow: hidden;
+    border-radius: 8px;
+    table-layout: fixed; /* CRITICAL FIX: Ensures columns respect specified widths */
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* Fix for overlapping text in the Education table */
+th:nth-child(1), td:nth-child(1) {
+    width: 30%; /* Degree column */
+}
+th:nth-child(2), td:nth-child(2) {
+    width: 25%; /* Institution column */
+}
+th:nth-child(3), td:nth-child(3) {
+    width: 25%; /* CGPA/% column */
+}
+
+th {
+    background-color: var(--secondary-color);
+    color: white;
+    font-weight: bold;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+/* End of New CSS */
+
+
+th {
+    background-color: var(--secondary-color);
+    color: white;
+    font-weight: bold;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+        /* --- Footer --- */
+        #contact {
+            background: #232f3e; /* Darker, sophisticated footer */
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        #contact p {
+            margin: 10px 0;
+        }
+
+        /* --- Responsive Design (Mobile) --- */
+        @media (max-width: 768px) {
+            #navbar .container {
+                flex-direction: column;
+                padding: 10px 20px;
+            }
+
+            #navbar ul {
+                margin-top: 10px;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            #navbar ul li a {
+                display: block;
+                padding: 8px 0;
+            }
+
+            #hero {
+                height: 60vh;
+            }
+
+            #hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .impact-statement {
+                flex-direction: column;
+                padding: 10px;
+            }
+            .impact-statement i {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="progress-bar"></div>
+
+    <nav id="navbar">
+        <div class="container">
+            <a href="#hero" class="logo">Basu Tandon</a>
+            <ul>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Academics</a></li>
+                <li><a href="#contact" class="button-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="hero">
+        <div class="hero-content">
+            <h1>Basu Tandon</h1>
+            <h2>Data-Driven Materials Engineer | Process Optimization & Predictive Modeling</h2>
+            <div class="impact-statement">
+                <i class="fas fa-chart-line"></i>
+                <p>Driving **Rs 30 Crore Annual Savings** through Process Innovation at Tata Steel.</p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/basu-tandon-7324aa1b2?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BKpbF46L5Rs%2Bgod%2F3%2BOJoCg%3D%3D" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="mailto:basutandon4257@gmail.com"><i class="fas fa-envelope"></i> basutandon4257@gmail.com</a>
+                <a href="tel:9690612236"><i class="fas fa-phone"></i> 9690612236</a>
+                <a href="D:\Desktop Docs 02-02-2025\My Desktop Docs\PHD\CV\Basu Tandon_CV.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Resume</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section id="experience">
+    <div class="section-header">
+        <h2><i class="fas fa-industry"></i> Professional Experience</h2>
+    </div>
+        <div class="job-card animated-card">
+        <h3>Tata Steel Limited, Technologist | Iron Making Technology Group</h3>
+        <p class="duration">Mar 2024–Present</p>
+        <ul>
+            <li><strong>High-Impact Innovation:</strong> Implemented a <strong>50&deg;C</strong> reduction in DRI reduction zone temperature, securing <strong>Rs 30 crore annual savings</strong> and extended campaign life. This project was documented and presented in a detailed <a href="[PASTE YOUR PUBLIC PRESENTATION URL HERE]" target="_blank" style="color: var(--impact-color); font-weight: bold; text-decoration: none;">Technical Presentation</a>.</li>
+            <li><strong>Predictive Modeling:</strong> Developed a <strong>hybrid numerical + regression model</strong> for a coal-based DRI rotary kiln, achieving an <strong>R² score of 0.92</strong> in predicting quality and efficiency.</li>
+            <li><strong>Energy Efficiency:</strong> Led the application of <strong>INSULAIRR® Li 1000</strong> coating, reducing heat loss and realizing an annual saving of <strong>Rs 1.5 crore</strong>.</li>
+            <li><strong>Data Analytics:</strong> Analyzed large-scale kiln data using Python (pandas, numpy, matplotlib) to correlate process parameters with DRI quality and consumption.</li>
+            <li><strong>Process Control:</strong> Spearheaded trials, delivered daily, weekly, and monthly process reports, and provided actionable recommendations to enhance productivity.</li>
+        </ul>
+    </div>
+
+    <div class="job-card animated-card">
+        <h3>Tata Steel Limited, Management Trainee | Iron Making Technology Group</h3>
+        <p class="duration">Aug 2023–Feb 2024</p>
+        <ul>
+            <li>Conducted extensive projects on <strong>Direct Reduced Iron (DRI)</strong>, focusing on process optimization.</li>
+            <li>Secured <strong>2nd place</strong> for outstanding execution and presentation of the Management Trainee project.</li>
+        </ul>
+    </div>
+</section>
+        <section id="projects">
+            <div class="section-header">
+                <h2><i class="fas fa-project-diagram"></i> Data Analytics & Modeling Projects</h2>
+            </div>
+
+            <div class="project-card animated-card">
+                <h4>Predictive Modeling of DRI Quality using Process Data</h4>
+                <p class="tech-stack">Python (Scikit-learn, Pandas), Regression Models, Data Preprocessing</p>
+                <p>Trained regression models (Linear, Random Forest) using <strong>scikit-learn</strong>, achieving R²=0.92 in predicting metallization (FeM%). Applied data preprocessing, correlation analysis, and feature selection on large kiln datasets.</p>
+            </div>
+
+            <div class="project-card animated-card">
+                <h4>Preparation of Al-Doped ZnO Thin Films & ML-Based Optimization</h4>
+                <p class="tech-stack">Genetic Algorithm, Regression, Solvothermal Synthesis, Spin Coating</p>
+                <p>Optimized thin-film processing parameters using <strong>Genetic Algorithm</strong> to achieve minimal resistivity and high transmittance. Synthesized AZO nanoparticles and deposited films via spin coating. Characterized films using XRD, SEM, TEM, AFM, and UV-Vis Spectroscopy. </p>
+            </div>
+
+            <div class="project-card animated-card">
+                <h4>Hardness Variation with Carbon Concentration in Steel</h4>
+                <p class="tech-stack">MATLAB, Finite Difference Method (FDM), Carburization Simulation</p>
+                <p>Developed a <strong>MATLAB model</strong> using the <strong>Finite Difference Method</strong> to simulate surface hardness variations. Analyzed the effect of carbon concentration as a function of depth in carburized steel.</p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="section-header">
+                <h2><i class="fas fa-tools"></i> Technical Skills & Domain Expertise</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-group skill-animate">
+                    <h4>Data Science & Programming</h4>
+                    <ul>
+                        <li><strong>Python</strong> (Pandas, NumPy, Matplotlib, Scikit-learn, Seaborn)</li>
+                        <li><strong>Modeling:</strong> Hybrid Numerical/Regression Models</li>
+                        <li><strong>Visualization:</strong> Power BI, Automated Dashboards</li>
+                        <li><strong>Simulation:</strong> MATLAB, C, Finite Difference Method (FDM)</li>
+                    </ul>
+                </div>
+                <div class="skill-group skill-animate">
+                    <h4>Core Materials & Manufacturing</h4>
+                    <ul>
+                        <li><strong>Process:</strong> Direct Reduced Iron (DRI) Production</li>
+                        <li><strong>Optimization:</strong> Process Parameter Optimization, Energy Efficiency</li>
+                        <li><strong>Sustainability:</strong> Alternative Fuels (Rice Husk, PKSC), Decarbonization</li>
+                        <li><strong>Processing:</strong> Friction Stir Welding (FSW) of Al Alloy</li>
+                    </ul>
+                </div>
+                <div class="skill-group skill-animate">
+                    <h4>Certifications & Languages</h4>
+                    <ul>
+                        <li><strong>ML:</strong> Structuring Machine Learning Projects (DeepLearning.AI)</li>
+                        <li><strong>Nanotech:</strong> NPTEL Nanotechnology Science and Applications (IIT Madras)</li>
+                        <li><strong>Languages:</strong> Hindi (Fluent), English (Fluent), German (A2 Level)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+    <div class="section-header">
+        <h2><i class="fas fa-graduation-cap"></i> Academic Profile & Achievements</h2>
+    </div>
+
+    <div class="academic-grid">
+        <div class="card animated-card">
+            <h4>Education</h4>
+            <table>
+                <thead>
+                    <tr><th>Degree</th><th>Institution</th><th>CGPA/%</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>M.Tech in Materials Science & Engineering</td><td>IIT Kanpur</td><td>8.75/10</td></tr>
+                    <tr><td>B.Tech in Metallurgical & Materials Engineering</td><td>NIT Durgapur</td><td>8.28/10</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="card animated-card">
+            <h4>Scholastic Achievements</h4>
+            <ul>
+                <li>Awarded <strong>DAAD Scholarship</strong>, TU Braunschweig, Germany (2022-2023).</li>
+                <li>Achieved <strong>AIR 420</strong> in GATE Metallurgical Engineering (2021).</li>
+                <li>Secured AIR 40799 in JEE Mains (2017) among 1.2 million applicants.</li>
+            </ul>
+        </div>
+        <div class="card animated-card">
+            <h4>Technical Reports & Conferences</h4>
+            <ul>
+                <li>*Scenario for the Trial of Rice Husk as a Replacement for Coal in DRI Rotary Kiln*.</li>
+                <li>*Optimizing Sustainability: Utilizing PKSC for Coal-Based DRI Production*.</li>
+                <li>Attended International Conference on Green and Sustainable Iron Making (Jan 2024).</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <p>&copy; 2025 Basu Tandon. Built with Passion.</p>
+            <p>Connect with me for process optimization and data science opportunities.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll Progress Bar
+        window.onscroll = function() { scrollProgress() };
+
+        function scrollProgress() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+
+            // Card Reveal on Scroll (Animation)
+            var cards = document.querySelectorAll('.animated-card, .skill-group');
+            cards.forEach(card => {
+                var position = card.getBoundingClientRect().top;
+                var screenHeight = window.innerHeight;
+
+                // If the card is 80% visible on screen, add the 'in-view' class
+                if (position < screenHeight * 0.85) {
+                    card.classList.add('in-view');
+                } else {
+                    card.classList.remove('in-view'); // Optional: remove class when scrolling up
+                }
+            });
+        }
+        scrollProgress(); // Run once on load
+    </script>
+
+</body>
+</html>
